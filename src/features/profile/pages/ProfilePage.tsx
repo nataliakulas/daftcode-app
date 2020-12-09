@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Id } from '../../../common/types';
 import { Post } from '../types';
+import PostBar from '../components/PostBar';
 import { fetchUser, fetchUserPosts } from '../saga';
-import { resetUser, selectUser, resetPosts, selectPosts } from '../slice';
+import { resetPosts, resetUser, selectPosts, selectUser } from '../slice';
 import { StyledProfileName, StyledProfilePage } from './styles';
 
 const ProfilePage = () => {
@@ -29,7 +30,7 @@ const ProfilePage = () => {
     <StyledProfilePage>
       <StyledProfileName>{user.name}</StyledProfileName>
       {posts.map((post: Post) => (
-        <div key={post.id}>{post.title}</div>
+        <PostBar key={post.id} post={post} />
       ))}
     </StyledProfilePage>
   );
