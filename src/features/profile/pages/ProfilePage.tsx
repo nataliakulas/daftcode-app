@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { route } from '../../../app/Router';
 import { Id } from '../../../common/types';
 import { Post } from '../types';
 import PostBar from '../components/PostBar';
 import { fetchUser, fetchUserPosts } from '../saga';
 import { resetPosts, resetUser, selectPosts, selectUser } from '../slice';
-import { StyledProfileName, StyledProfilePage } from './styles';
+import { StyledLink, StyledProfileHeader, StyledProfileName, StyledProfilePage } from './styles';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,10 @@ const ProfilePage = () => {
 
   return (
     <StyledProfilePage>
-      <StyledProfileName>{user.name}</StyledProfileName>
+      <StyledProfileHeader>
+        <StyledLink to={route.dashboard} />
+        <StyledProfileName>{user.name}</StyledProfileName>
+      </StyledProfileHeader>
       {posts.map((post: Post) => (
         <PostBar key={post.id} post={post} />
       ))}
