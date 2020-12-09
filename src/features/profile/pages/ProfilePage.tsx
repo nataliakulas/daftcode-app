@@ -5,7 +5,9 @@ import { route } from '../../../app/Router';
 import { Id } from '../../../common/types';
 import { Post } from '../types';
 import PostBar from '../components/PostBar';
+import PostModal from '../components/PostModal';
 import { fetchUser, fetchUserPosts } from '../saga';
+import { modalOpen } from '../../../app/App/slice';
 import { resetPosts, resetUser, selectPosts, selectUser } from '../slice';
 import { StyledButtonPost, StyledLink, StyledProfileHeader, StyledProfileName, StyledProfilePage } from './styles';
 
@@ -27,16 +29,19 @@ const ProfilePage = () => {
     };
   }, [dispatch, id]);
 
+  const handleOpen = () => dispatch(modalOpen('ADD_POST'));
+
   return (
     <StyledProfilePage>
       <StyledProfileHeader>
         <StyledLink to={route.dashboard} />
         <StyledProfileName>{user.name}</StyledProfileName>
-        <StyledButtonPost>+</StyledButtonPost>
+        <StyledButtonPost onClick={handleOpen}>+</StyledButtonPost>
       </StyledProfileHeader>
       {posts.map((post: Post) => (
         <PostBar key={post.id} post={post} />
       ))}
+      <PostModal />
     </StyledProfilePage>
   );
 };
