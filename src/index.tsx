@@ -1,11 +1,15 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './app/App';
+import store from './app/store';
 import reportWebVitals from './reportWebVitals';
 
 render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>,
   document.getElementById('root'),
 );
