@@ -8,7 +8,6 @@ export const StyledDashboardCard = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   background-color: ${color.grey};
 
@@ -28,9 +27,15 @@ export const StyledDashboardUserContact = styled.div`
   display: flex;
   flex-direction: column;
 
+  margin-bottom: 2rem;
+
   a {
     color: ${color.ash};
   }
+`;
+
+export const StyledDashboardCardUserCompany = styled.p`
+  color: ${color.dust};
 `;
 
 export const StyledDashboardUserLink = styled(Link)`
@@ -46,6 +51,8 @@ export const StyledDashboardUserLink = styled(Link)`
 
   border-radius: 9rem;
   background-color: ${color.white};
+
+  margin: auto auto 1rem auto;
 
   :hover {
     opacity: 0.8;

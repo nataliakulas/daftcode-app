@@ -5,9 +5,10 @@ import {
   StyledDashboardUserName,
   StyledDashboardUserContact,
   StyledDashboardUserLink,
+  StyledDashboardCardUserCompany,
 } from './styles';
 
-const DashboardCard = ({ user: { id, name, email, phone, website } }: { user: User }) => (
+const DashboardCard = ({ user: { id, name, email, phone, website, company } }: { user: User }) => (
   <StyledDashboardCard>
     <StyledDashboardUserName>{name}</StyledDashboardUserName>
     <StyledDashboardUserContact>
@@ -19,6 +20,7 @@ const DashboardCard = ({ user: { id, name, email, phone, website } }: { user: Us
         {website}
       </a>
     </StyledDashboardUserContact>
+    <StyledDashboardCardUserCompany>{company.catchPhrase}</StyledDashboardCardUserCompany>
     <StyledDashboardUserLink to={profilePath({ id })}>Details</StyledDashboardUserLink>
   </StyledDashboardCard>
 );
