@@ -1,5 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { Id } from '../../common/types';
+import fetchRequest from '../../common/utils/fetchRequest';
 import { adaptUser } from '../dashboard/utils/adapters';
 import { setUser } from './slice';
 
@@ -13,9 +14,7 @@ export function fetchUser({ id }: Id) {
 
 export function* fetchUserSaga({ id }: Id) {
   try {
-    let user = yield call(() =>
-      fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => response.json()),
-    );
+    let user = yield call(() => fetchRequest('users', id));
     yield put(setUser(adaptUser(user)));
   } catch (e) {
     console.log(e);
