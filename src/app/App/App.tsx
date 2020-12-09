@@ -1,9 +1,12 @@
-import { Router, Switch } from 'react-router-dom';
-import { history } from '../Router';
+import { Route, Router, Switch } from 'react-router-dom';
+import { history, route } from '../Router';
+import DashboardPage from '../../features/dashboard/pages';
 
 const App = () => (
   <Router history={history}>
-    <Switch />
+    <Switch>
+      <Route exact path={route.dashboard} component={DashboardPage} />
+    </Switch>
   </Router>
 );
 
