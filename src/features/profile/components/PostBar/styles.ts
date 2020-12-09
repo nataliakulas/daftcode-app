@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import color from '../../../../common/styles/colors';
+import { ButtonMixin } from '../../../../common/styles/mixins';
 import trash from '../../../../common/assets/trash.svg';
 
 export const StyledPostBar = styled.div`
@@ -19,19 +20,12 @@ export const StyledPostBar = styled.div`
 `;
 
 export const StyledButtonDelete = styled.button`
-  width: 2.4rem;
-  height: 2.4rem;
+  ${ButtonMixin};
 
   background-color: ${color.grey};
   background-image: url(${trash});
-  background-repeat: no-repeat;
-  background-position: center;
-
-  border: none;
 
   margin: 2rem;
-
-  cursor: pointer;
 `;
 
 export const StyledPostTitle = styled.p`

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ButtonMixin } from '../../../common/styles/mixins';
 import arrow from '../../../common/assets/arrow.svg';
 
 export const StyledProfilePage = styled.div`
@@ -15,12 +16,9 @@ export const StyledProfileHeader = styled.header`
 `;
 
 export const StyledLink = styled(Link)`
-  width: 2.4rem;
-  height: 2.4rem;
+  ${ButtonMixin};
 
   background-image: url(${arrow});
-  background-repeat: no-repeat;
-  background-position: center;
 `;
 
 export const StyledProfileName = styled.h1`
