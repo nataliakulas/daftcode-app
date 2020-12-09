@@ -7,7 +7,7 @@ import { Post } from '../types';
 import PostBar from '../components/PostBar';
 import { fetchUser, fetchUserPosts } from '../saga';
 import { resetPosts, resetUser, selectPosts, selectUser } from '../slice';
-import { StyledLink, StyledProfileHeader, StyledProfileName, StyledProfilePage } from './styles';
+import { StyledButtonPost, StyledLink, StyledProfileHeader, StyledProfileName, StyledProfilePage } from './styles';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -32,6 +32,7 @@ const ProfilePage = () => {
       <StyledProfileHeader>
         <StyledLink to={route.dashboard} />
         <StyledProfileName>{user.name}</StyledProfileName>
+        <StyledButtonPost>+</StyledButtonPost>
       </StyledProfileHeader>
       {posts.map((post: Post) => (
         <PostBar key={post.id} post={post} />

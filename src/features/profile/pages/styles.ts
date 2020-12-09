@@ -28,3 +28,9 @@ export const StyledProfileName = styled.h1`
 
   margin: 1rem auto;
 `;
+
+export const StyledButtonPost = styled.button`
+  ${ButtonMixin};
+  
+  border-radius: 50%;
+`;

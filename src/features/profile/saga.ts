@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest, select } from 'redux-saga/effects';
+import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import { Id } from '../../common/types';
 import { Post } from './types';
 import fetchRequest from '../../common/utils/fetchRequest';
