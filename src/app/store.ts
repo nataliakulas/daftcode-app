@@ -2,6 +2,7 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import saga from './saga';
 import dashboardReducer from '../features/dashboard/slice';
+import profileReducer from '../features/profile/slice';
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
@@ -9,6 +10,7 @@ const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 const store = configureStore({
   reducer: {
     dashboard: dashboardReducer,
+    profile: profileReducer,
   },
   middleware,
 });
