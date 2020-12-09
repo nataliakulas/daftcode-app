@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
 
     display: flex;
 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     color: ${color.green};
 
     background-color: ${color.backgroundGrey};
