@@ -1,5 +1,6 @@
+import { Id } from '../../common/types';
+
 export type User = {
-  id: number;
   name: string;
   email: string;
   phone: string;
@@ -7,4 +8,4 @@ export type User = {
   company: {
     catchPhrase: string;
   };
-};
+} & Id;

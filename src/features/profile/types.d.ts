@@ -1,5 +1,6 @@
+import { Id } from '../../common/types';
+
 export type Post = {
-  id: number;
   title: string;
   body: string;
-};
+} & Id;

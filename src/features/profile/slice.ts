@@ -3,7 +3,7 @@ import { RootState } from '../../app/store';
 import { User } from '../dashboard/types';
 
 const user: User = {
-  id: 0,
+  id: '',
   name: '',
   email: '',
   phone: '',
