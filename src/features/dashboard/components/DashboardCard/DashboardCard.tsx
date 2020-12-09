@@ -1,7 +1,13 @@
+import { profilePath } from '../../../../app/Router/utils';
 import { User } from '../../types';
-import { StyledDashboardCard, StyledDashboardUserName, StyledDashboardUserContact } from './styles';
+import {
+  StyledDashboardCard,
+  StyledDashboardUserName,
+  StyledDashboardUserContact,
+  StyledDashboardUserLink,
+} from './styles';
 
-const DashboardCard = ({ user: { name, email, phone, website } }: { user: User }) => (
+const DashboardCard = ({ user: { id, name, email, phone, website } }: { user: User }) => (
   <StyledDashboardCard>
     <StyledDashboardUserName>{name}</StyledDashboardUserName>
     <StyledDashboardUserContact>
@@ -13,6 +19,7 @@ const DashboardCard = ({ user: { name, email, phone, website } }: { user: User }
         {website}
       </a>
     </StyledDashboardUserContact>
+    <StyledDashboardUserLink to={profilePath({ id })}>Details</StyledDashboardUserLink>
   </StyledDashboardCard>
 );
 

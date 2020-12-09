@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import color from '../../../../common/styles/colors';
 
 export const StyledDashboardCard = styled.div`
@@ -29,5 +30,24 @@ export const StyledDashboardUserContact = styled.div`
 
   a {
     color: ${color.ash};
+  }
+`;
+
+export const StyledDashboardUserLink = styled(Link)`
+  width: 20rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: ${color.black};
+  text-decoration: none;
+
+  border-radius: 9rem;
+  background-color: ${color.white};
+
+  :hover {
+    opacity: 0.8;
   }
 `;
