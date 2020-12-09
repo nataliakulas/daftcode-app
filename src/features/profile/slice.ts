@@ -17,6 +17,7 @@ const slice = createSlice({
   name: 'profile',
   initialState: {
     user,
+    posts: [],
   },
   reducers: {
     setUser: (state, { payload }) => {
@@ -25,11 +26,18 @@ const slice = createSlice({
     resetUser: (state) => {
       state.user = user;
     },
+    setPosts: (state, { payload }) => {
+      state.posts = payload;
+    },
+    resetPosts: (state) => {
+      state.posts = [];
+    },
   },
 });
 
 export const selectUser = (state: RootState) => state.profile.user;
+export const selectPosts = (state: RootState) => state.profile.posts;
 
-export const { setUser, resetUser } = slice.actions;
+export const { setUser, resetUser, setPosts, resetPosts } = slice.actions;
 
 export default slice.reducer;
