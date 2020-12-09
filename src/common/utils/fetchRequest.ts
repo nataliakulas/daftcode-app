@@ -1,6 +1,7 @@
-const fetchRequest = (path: string, params?: string) =>
-  fetch(`https://jsonplaceholder.typicode.com/${path}${params ? `/${params}` : ''}`).then((response) =>
-    response.json(),
-  );
+const fetchRequest = (path: string, params?: string, method?: string) =>
+  fetch(
+    `https://jsonplaceholder.typicode.com/${path}${params ? `/${params}` : ''}`,
+    method ? { method } : {},
+  ).then((response) => response.json());
 
 export default fetchRequest;
